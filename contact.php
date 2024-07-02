@@ -1,3 +1,7 @@
+<?php
+  require("./layouts/header.php")
+?>
+
 <!DOCTYPE html>
 <html lang="en">
   <head>
@@ -26,142 +30,7 @@
 
   <body>
     <!--================Header Menu Area =================-->
-    <header class="header_area">
-      <div class="top_menu">
-        <div class="container">
-          <div class="row">
-            <div class="col-lg-7">
-              <div class="float-left">
-                <p>Phone: +01 256 25 235</p>
-                <p>email: info@eiser.com</p>
-              </div>
-            </div>
-            <div class="col-lg-5">
-              <div class="float-right">
-                <ul class="right_side">
-                  <li>
-                    <a href="cart.html">
-                      gift card
-                    </a>
-                  </li>
-                  <li>
-                    <a href="tracking.html">
-                      Giao Hàng
-                    </a>
-                  </li>
-                  <li>
-                    <a href="contact.html">
-                      Liên Hệ
-                    </a>
-                  </li>
-                </ul>
-              </div>
-            </div>
-          </div>
-        </div>
-      </div>
-      <div class="main_menu">
-        <div class="container">
-          <nav class="navbar navbar-expand-lg navbar-light w-100">
-            <!-- Brand and toggle get grouped for better mobile display -->
-            <a class="navbar-brand logo_h" href="index.html">
-              <img src="img/logo.png" alt="" style="width:50%";/>
-            </a>
-            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent"
-              aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
-              <span class="icon-bar"></span>
-              <span class="icon-bar"></span>
-              <span class="icon-bar"></span>
-            </button>
-            <!-- Collect the nav links, forms, and other content for toggling -->
-            <div class="collapse navbar-collapse offset w-100" id="navbarSupportedContent">
-              <div class="row w-100 mr-0">
-                <div class="col-lg-7 pr-0">
-                  <ul class="nav navbar-nav center_nav pull-right">
-                    <li class="nav-item active">
-                      <a class="nav-link" href="index.html">Trang chủ</a>
-                    </li>
-                    <li class="nav-item submenu dropdown">
-                      <a href="#" class="nav-link dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true"
-                        aria-expanded="false">Cửa Hàng</a>
-                      <ul class="dropdown-menu">
-                        <li class="nav-item">
-                          <a class="nav-link" href="category.html">Sản Phẩm</a>
-                        </li>
-                        <li class="nav-item">
-                          <a class="nav-link" href="single-product.html">Chi Tiết Sản Phẩm</a>
-                        </li>
-                        <li class="nav-item">
-                          <a class="nav-link" href="checkout.html">Thanh Toán</a>
-                        </li>
-                        <li class="nav-item">
-                          <a class="nav-link" href="cart.html">Giỏ Hàng</a>
-                        </li>
-                      </ul>
-                    </li>
-                    <li class="nav-item submenu dropdown">
-                      <a href="#" class="nav-link dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true"
-                        aria-expanded="false">Bài viết</a>
-                      <ul class="dropdown-menu">
-                        <li class="nav-item">
-                          <a class="nav-link" href="blog.html">Bài viết</a>
-                        </li>
-                        <li class="nav-item">
-                          <a class="nav-link" href="single-blog.html">Chi tiết bài viết</a>
-                        </li>
-                      </ul>
-                    </li>
-                    <li class="nav-item submenu dropdown">
-                      <a href="#" class="nav-link dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true"
-                        aria-expanded="false">Trang</a>
-                      <ul class="dropdown-menu">
-                        <li class="nav-item">
-                          <a class="nav-link" href="tracking.html">Theo dõi đơn giàng</a>
-                        </li>
-                        <li class="nav-item">
-                          <a class="nav-link" href="elements.html">Elements</a>
-                        </li>
-                      </ul>
-                    </li>
-                    <li class="nav-item">
-                      <a class="nav-link" href="contact.html">Liên hệ</a>
-                    </li>
-                  </ul>
-                </div>
-  
-                <div class="col-lg-5 pr-0">
-                  <ul class="nav navbar-nav navbar-right right_nav pull-right">
-                    <li class="nav-item">
-                      <a href="#" class="icons">
-                        <i class="ti-search" aria-hidden="true"></i>
-                      </a>
-                    </li>
-  
-                    <li class="nav-item">
-                      <a href="#" class="icons">
-                        <i class="ti-shopping-cart"></i>
-                      </a>
-                    </li>
-  
-                    <li class="nav-item">
-                      <a href="login.html" class="icons">
-                        <i class="ti-user" aria-hidden="true"></i>
-                      </a>
-                    </li>
-  
-                    <li class="nav-item">
-                      <a href="#" class="icons">
-                        <i class="ti-heart" aria-hidden="true"></i>
-                      </a>
-                    </li>
-                  </ul>
-                </div>
-              </div>
-            </div>
-          </nav>
-        </div>
-      </div>
-    </header>
+    <header id="header"></header>
     <!--================Header Menu Area =================-->
 
     <!--================Home Banner Area =================-->
@@ -264,14 +133,14 @@
           <div class="media contact-info">
             <span class="contact-info__icon"><i class="ti-tablet"></i></span>
             <div class="media-body">
-              <h3><a href="tel:0347611586">0347611586</a></h3>
+              <h3><a href="tel:0347611586">0705585612</a></h3>
               <p>Từ 8:00 đến 18:00 các ngày trong tuần </p>
             </div>
           </div>
           <div class="media contact-info">
             <span class="contact-info__icon"><i class="ti-email"></i></span>
             <div class="media-body">
-              <h3><a href="mailto:lonely02hp@gmail.com">lonely02hp@gmail.com</a></h3>
+              <h3><a href="mailto:dangduong0127@gmail.com">dangduong0127@gmail.com</a></h3>
               <p>Gửi mail cho chúng tôi!</p>
             </div>
           </div>
@@ -348,10 +217,10 @@ Copyright &copy;<script>document.write(new Date().getFullYear());</script> All r
 -->
 <!-- Link back to Colorlib can't be removed. Template is licensed under CC BY 3.0. --></p>
       <div class="col-lg-4 col-md-12 footer-social">
-        <a href="https://www.facebook.com/duykhanh021101"><i class="fa fa-facebook"></i></a>
-        <a href="https://www.instagram.com/n.d.khanh02/?fbclid=IwAR05ERqeytGs_2roHsoAxNt-l2nyjtjRAC9WZp4EU6C767hWOwaftuUx9Hw"><i class="fa fa-instagram"></i></a>
-        <a href="https://www.youtube.com/channel/UC7hClxCjYxoUqI334g1Rs7Q"><i class="fa fa-youtube"></i></a>
-        <a href="https://twitter.com/home"><i class="fa fa-twitter"></i></a>
+        <a href="#"><i class="fa fa-facebook"></i></a>
+        <a href="#"><i class="fa fa-instagram"></i></a>
+        <a href="#"><i class="fa fa-youtube"></i></a>
+        <a href="#"><i class="fa fa-twitter"></i></a>
       </div>
     </div>
   </div>

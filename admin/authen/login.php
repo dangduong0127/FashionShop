@@ -72,8 +72,8 @@
                 </div>
                 <h4 style="color: red;" class="text-center"><?=$msg?> </h4>
                <!-- <span>or use your account</span> -->
-                <input required="true" id="email" name="email" type="email" placeholder="Email" />
-                <input required="true" id="pwd" name="password" type="password" placeholder="Mật Khẩu" minlength="6" />
+                <input required="true" id="email" value="duong@admin" name="email" type="email" placeholder="Email" />
+                <input required="true" id="pwd" value="123123a@B" name="password" type="password" placeholder="Mật Khẩu" minlength="6" />
                 <a href="#">Bạn đã quên mật khẩu?</a>
                 <a href="../../index.php" style="top: -25px!important;position: relative;">Quay lại trang chủ</a>
                 <button style="position:relative; top: -25px;">Đăng nhập</button> 

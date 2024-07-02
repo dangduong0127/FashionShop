@@ -6,7 +6,7 @@
     $sql = "select * from Category";
     $menuItems = executeResult($sql);
 
-    $sql = "select Product.*, Category.name as category_name from Product left join Category on Product.category_id = Category.id where Product.deleted = 0 order by Product.updated_at desc limit 0,5";
+    $sql = "select Product.*, Category.name as category_name from Product left join Category on Product.category_id = Category.id where Product.deleted = 0 order by Product.updated_at desc limit 0,4";
     $lastestItems = executeResult($sql);
 
     $urlRole = './admin/authen/login.php';
@@ -53,17 +53,17 @@
             <div class="float-right">
               <ul class="right_side">
                 <li>
-                  <a href="cart.html">
+                  <a href="cart.php">
                     gift card
                   </a>
                 </li>
                 <li>
-                  <a href="tracking.html">
+                  <a href="#">
                     Giao Hàng
                   </a>
                 </li>
                 <li>
-                  <a href="contact.html">
+                  <a href="contact.php">
                     Liên Hệ
                   </a>
                 </li>
@@ -78,7 +78,7 @@
         <nav class="navbar navbar-expand-lg navbar-light w-100">
           <!-- Brand and toggle get grouped for better mobile display -->
           <a class="navbar-brand logo_h" href="index.php">
-            <img src="img/logo.png" alt="" style="width:50%"; />
+            <img src="img/logo.png" alt="" />
           </a>
           <!-- Collect the nav links, forms, and other content for toggling -->
           <div class="collapse navbar-collapse offset w-100" id="navbarSupportedContent">
@@ -96,11 +96,12 @@
                       }
                     ?>
                   <li class="nav-item">
-                    <a class="nav-link" href="single-blog.html">Bài Viết</a>
+                    <a class="nav-link" href="blog.php">Bài Viết</a>
                   </li>
                   <li class="nav-item">
-                    <a class="nav-link" href="contact.html">Liên hệ</a>
+                    <a class="nav-link" href="contact.php">Liên hệ</a>
                   </li>
+                </ul>
               </div>
 
               <div class="col-lg-0 pr-0" style="left: 690px !important; bottom: 80px;position: relative;">
@@ -132,8 +133,72 @@
               </div>
             </div>
           </div>
+          <div id="NavBar" class="icons">
+            <i class="fa-solid fa-bars"></i>           
+          </div>
         </nav>
       </div>
     </div>
+
+            <div class="subMenu">
+              <ul class="nav">
+                  <li class="nav-item active">
+                    <a class="nav-link" href="index.php">Trang chủ</a>
+                  </li> 
+                  <?php 
+                      foreach($menuItems as $item){
+                        echo '<li class="nav-item">
+                                <a class="nav-link" href="category.php?id='.$item['id'].'">'.$item['name'].'</a>
+                              </li>';
+                      }
+                    ?>
+                  <li class="nav-item">
+                    <a class="nav-link" href="blog.php">Bài Viết</a>
+                  </li>
+                  <li class="nav-item">
+                    <a class="nav-link" href="contact.php">Liên hệ</a>
+                  </li>
+                </ul>
+
+                <div class="action">
+                  <ul class="">
+                    <li class="nav-item">
+                      <a href="category.php" class="icons">
+                        <i class="ti-search" aria-hidden="true"></i>
+                      </a>
+                    </li>
+
+                    <li class="nav-item">
+                      <a href="cart.php" class="icons">
+                        <i class="ti-shopping-cart"></i>
+                      </a>
+                    </li>
+
+                    <li class="nav-item">
+                      <a href="<?=$urlRole?>" class="icons">
+                        <i class="ti-user" aria-hidden="true"></i>
+                      </a>
+                    </li>
+
+                    <li class="nav-item">
+                      <a href="#" class="icons">
+                        <i class="ti-heart" aria-hidden="true"></i>
+                      </a>
+                    </li>
+                  </ul>
+                </div>
+            </div>
   </header>
+
+  <script>
+    const navBarEl = document.getElementById("NavBar")
+    navBarEl.addEventListener("click", ()=>{
+      const x = document.querySelector(".subMenu")
+      if(x.style.display === "none"){
+        x.style.display = "block"
+      } else {
+        x.style.display = "none"
+      }
+    })
+  </script>
   <!--================Header Menu Area =================-->

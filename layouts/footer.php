@@ -124,7 +124,7 @@
   ?>
   <span class="cart_icon">
     <span class="cart_count"><?=$count?></span>
-    <a href="cart.php" style="color:grey;"><i class="fa-regular fa-cart-shopping"></i></a>
+    <a href="cart.php" style="color:grey;"><i style="font-size: 40px;" class="fa-solid fa-cart-shopping"></i></a>
   </span>
 <script type="text/javascript">
   function addCart(productId, num){

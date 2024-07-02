@@ -5,50 +5,69 @@
   <body>
   <style type="text/css">
    
-.aspect-ratio-169{
-  display: block;
-  position: relative;
-  padding-top: 38%;
-  transition: 0.3s;
-}
-.aspect-ratio-169 img {
-  display: block;
-  position: absolute;
-  width: 100%;
-  height: auto%;
-  top: 0;
-  left: 0;
-}
+    .aspect-ratio-169{
+      display: block;
+      position: relative;
+      padding-top: 38%;
+      transition: 0.3s;
+    }
+    .aspect-ratio-169 img {
+      display: block;
+      position: absolute;
+      width: 100%;
+      height: auto%;
+      top: 0;
+      left: 0;
+    }
 
-.dot-container{
-  position: absolute;
-  height: 30px;
-  width: 100%;
-  display: flex;
-  align-items: center;
-  text-align: center;
-  justify-content: center;
-}
-.dot {
-  height: 15px;
-  width: 15px;
-  background-color: #ccc;
-  border-radius: 50%;
-  margin-right: 12px;
-  cursor: pointer;
-}
-.dot.active {
-  background-color: #333;
-}
-#slides {
-  padding-bottom: 35px;
-  overflow: hidden;
-}
+    .dot-container{
+      position: absolute;
+      /* height: 30px; */
+      width: 100%;
+      display: flex;
+      align-items: center;
+      text-align: center;
+      justify-content: center;
+    }
+    .dot {
+      height: 15px;
+      width: 15px;
+      background-color: #ccc;
+      border-radius: 50%;
+      margin-right: 12px;
+      cursor: pointer;
+    }
+    .dot.active {
+      background-color: #333;
+    }
+    #slides {
+      padding-bottom: 35px;
+      overflow: hidden;
+    }
 
+    .productWrapper{
+      display: flex;
+      justify-content: center;
+      flex-wrap: wrap;
+    }
+    .single-product{
+      width: 250px;
+      margin-right: 10px;
+    }
+    .product-img>a>img{
+      width: 100%;
+    }
 
+    #NavBar{
+      display: none;
+    }
 
+    .subMenu{
+      display: none;
+    }
   </style>
   <div id="header"></div>
+
   <section id="slides">
     <div class="aspect-ratio-169">
       <img src="imgSlides/37f8b36e48f471db0580e659248b7d7b.jpg">
@@ -157,13 +176,15 @@
 
       <div class="row">
         <div class="container">
-          <div class="col-lg-5 col-6" style="display: flex;left: -160px;">
+          <div class="productWrapper" >
+          
           <?php
           foreach($lastestItems as $item) {
-            echo '<div class="single-product" style="margin-left: 20px;">
+            echo'
+              <div class="single-product" >
               <div class="product-img">
               <a href="detail.php?id='.$item['id'].'">
-                <img src="'.$item['thumbnail'].'" style="width:255px; height: 382px"/>
+                <img src="'.$item['thumbnail'].'" style="height: 382px"/>
                 </a>
                 <div class="p_icon">
                   <a href="#">
@@ -184,11 +205,42 @@
                 <div class="mt-3">
                 <del>'.number_format($item['price']).'</del>
                 <br>
-                  <span class="mr-4">'.number_format($item['discount']).' VNĐ</span>
+                  <span class="mr-4" style="color:red;">'.number_format($item['discount']).' VNĐ</span>
                   
                 </div>
               </div>
-            </div>';
+            </div>  
+            ';
+            
+            // echo '<div class="single-product" style="margin-left: 20px;">
+            //   <div class="product-img">
+            //   <a href="detail.php?id='.$item['id'].'">
+            //     <img src="'.$item['thumbnail'].'" style="width:255px; height: 382px"/>
+            //     </a>
+            //     <div class="p_icon">
+            //       <a href="#">
+            //         <i class="ti-eye"></i>
+            //       </a>
+            //       <a href="#">
+            //         <i class="ti-heart"></i>
+            //       </a>
+            //       <a href="#" onclick="addCart('.$item['id'].', 1)">
+            //         <i class="ti-shopping-cart"></i>
+            //       </a>
+            //     </div>
+            //   </div>
+            //   <div class="product-btm">
+            //     <a href="detail.php?id='.$item['id'].'" class="d-block">
+            //       <h4>'.$item['title'].'</h4>
+            //     </a>
+            //     <div class="mt-3">
+            //     <del>'.number_format($item['price']).'</del>
+            //     <br>
+            //       <span class="mr-4">'.number_format($item['discount']).' VNĐ</span>
+                  
+            //     </div>
+            //   </div>
+            // </div>';
           }
           ?>
         </div>
@@ -205,7 +257,7 @@
           <div class="offer_content">
             <h3 class="text-uppercase mb-40">Thời trang nam/nữ</h3>
             <h2 class="text-uppercase">Giảm sốc 50%</h2>
-            <a href="cart.html" class="main_btn mb-20 mt-5">Thêm vào giỏ hàng</a>
+            <a href="cart.php" class="main_btn mb-20 mt-5">Thêm vào giỏ hàng</a>
             <p>Thời gian có hạn</p>
           </div>
         </div>
@@ -232,15 +284,16 @@
           <div class="main_title">
         <h2 style=""><span><?=$item['name']?></span></h2>
         <p style="margin-bottom: 40px;">Những sản phẩm mới xuất hiện trong tháng 12 này</p>
-        <div class="col-lg-6 mt-5 mt-lg-0">
+        
           <div class="row">
-            <div class="col-lg-6 col-md-6" style="display: flex; justify-content: space-between;margin-left: -1rem;left: -80px;">
+            <div class="container">
+            <div class="productWrapper">
           <?php
           foreach($items as $pItem) {
-            echo '<div class="single-product" style="margin-left: 15px;">
+            echo '<div class="single-product">
                 <div class="product-img">
                 <a href="detail.php?id='.$pItem['id'].'">
-                  <img src="'.$pItem['thumbnail'].'" style="width:300px; height: 350px"/>
+                  <img src="'.$pItem['thumbnail'].'" style=" height: 382px"/>
                   </a>
                   <div class="p_icon">
                     <a href="#">
@@ -261,15 +314,16 @@
                   <div class="mt-3">
                   <del>'.number_format($pItem['price']).' VNĐ</del>
                   <br>
-                    <span class="mr-4">'.number_format($pItem['discount']).' VNĐ</span>
+                    <span class="mr-4" style="color:red;">'.number_format($pItem['discount']).' VNĐ</span>
                   </div>
                 </div>
               </div>';
           }
           ?>
         </div>
+            </div>
         </div>
-      </div>
+      
       </div>
         </div>
       </div>
